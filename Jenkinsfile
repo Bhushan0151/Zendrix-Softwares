@@ -6,3 +6,4 @@ pipeline {
                 // Perform your build steps here
                 sh 'mvn clean install' // Example for Maven build
             }
+        }
