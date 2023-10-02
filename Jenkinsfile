@@ -1,9 +1,21 @@
-stage('Pull Git Content to Folder') {
-    steps {
-        // Create a directory to store the Git content
-        sh 'mkdir -p my-files'
+pipeline {
+    agent any
 
-        // Copy the Git repository content to the "my-files" directory
-        sh 'cp -r * my-files/'
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the code from the Git repository
+                checkout scm
+            }
+        }
+        stage('Pull Git Content') {
+            steps {
+                // Create a directory to store the Git content
+                dir('my-folder') {
+                    // Copy the Git repository content to the directory
+                    sh 'cp -r * .'
+                }
+            }
+        }
     }
 }
