@@ -9,7 +9,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/develop']], userRemoteConfigs: [[https://github.com/Bhushan0151/Zendrix-Softwares.git]]])
             }
         }
-
         stage('Build') {
             steps {
                 // Perform your build steps here
