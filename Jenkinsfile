@@ -13,7 +13,7 @@ pipeline {
                 // Create a directory to store the Git content
                 dir('my-folder') {
                     // Copy the Git repository content to the directory
-                    cp -r source_directory/* destination_directory/
+                    cp -r source_directory/* destination_directory/'
                 }
             }
         }
