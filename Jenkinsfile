@@ -14,7 +14,6 @@ pipeline {
                 dir('my-folder') {
                     // Copy the Git repository content to the directory
                     cp -r source_directory/* destination_directory/
-'
                 }
             }
         }
